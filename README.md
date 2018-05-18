@@ -97,6 +97,7 @@ En este caso exponemos el servicio **go** en el puerto **:8080**, y respondera  
   - Ahora para ejecutar un servidor pequeño en nodejs implementamos el siguiente codigo
   -
 *[index.js](https://github.com/theboshy/nginx-load-balancer/blob/master/dirapp/nodeserv/index.js)*
+
 ```javascript
 var http = require('http');
 var fs = require('fs');
@@ -145,7 +146,8 @@ EXPOSE 80
  La configuracion del servidor **nginx** esta compuesta de la sigueinte manera
 
  *[nginx.conf](https://github.com/theboshy/nginx-load-balancer/blob/master/nginx/nginx.conf)*
-  ```nginx
+ 
+```nginx
 upstream app-node {
     #metodo : round-robin
     server 172.17.0.1:8081 weight=1;
@@ -169,12 +171,11 @@ server {
         proxy_pass http://app-go;
     }
 }
+```
 
-   ```
+De esta forma le indicamos a nginx que redireccione las peticiones de ```<host>/node``` a 2 posibles servidores que se encuentran referenciados en el **proxy_pass** del **lcoation/node**
 
-   De esta forma le indicamos a nginx que redireccione las peticiones de ```<host>/node``` a 2 posibles servidores que se encuentran referenciados en el **proxy_pass** del **lcoation/node**
-
-  ```nginx
+```nginx
 location /node {
       proxy_pass http://app-node;
   }
@@ -184,13 +185,14 @@ location /node {
     server 172.17.0.1:8081 weight=1;
     server 172.17.0.1:8082 weight=1;
 }
+```
 
-  ```
-  El parametro **weight** indica la cantidad maxima de sesiones en el servidor
+El parametro **weight** indica la cantidad maxima de sesiones en el servidor
 
   Ejemplo.
   Si se establece
-   ```nginx
+  
+```nginx
 upstream app-node {
      server 172.17.0.1:8081 weight=100;
      server 172.17.0.1:8082 weight=10;
