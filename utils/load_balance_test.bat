@@ -15,7 +15,6 @@ goto :EOF
 ::start msgbox.vbs ]-
 msg "%username%" no hubo respuesta del servidor %serv%
 ::echo %serv% no disponible.
-::pause
 goto :EOF
 
-::echo %DOCKER_HOST%
+::echo %DOCKER_HOST% : variable de entorno para la amquina virtual de docker
