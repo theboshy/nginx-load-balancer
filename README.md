@@ -29,7 +29,9 @@ Una vez terminado puede probar la instalacion dirigiendose a su servidor **nginx
 
 
 
-> Para conocer la **ip** del entorno docker puede ejecutar
+Para conocer la **ip** del entorno docker puede ejecutar
+
+
  ```bash
  docker-machine ip <MACHINE_NAME>
  ```
@@ -64,6 +66,7 @@ Una vez terminado puede probar la instalacion dirigiendose a su servidor **nginx
 
 
 *[main.go](https://github.com/theboshy/nginx-load-balancer/blob/master/dirapp/goserv/main.go)*
+
 ```go
 import (
 	"log"
@@ -130,10 +133,12 @@ EXPOSE 80
 ```
 
  Al ejecutar el comando
+ 
   ```docker
   RUN rm /etc/nginx/conf.d/default.conf
   ```
-  eliminaremos la configuracion por defecto de nginx.
+  
+ Eliminaremos la configuracion por defecto de nginx.
 
  Al ejecutar
 
