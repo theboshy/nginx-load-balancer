@@ -98,7 +98,8 @@ En este caso exponemos el servicio **go** en el puerto **:8080**, y respondera  
 
 * [nodeserv] - contenedor del servicio en **nodejs**
   - Ahora para ejecutar un servidor pequeño en nodejs implementamos el siguiente codigo
-  -
+ 
+ 
 *[index.js](https://github.com/theboshy/nginx-load-balancer/blob/master/dirapp/nodeserv/index.js)*
 
 ```javascript
