@@ -19,4 +19,4 @@ build:
 	#$(info verificar el host de los contenedores creados $docker-machine -ls )
 	#$(info verificar la url de una docker machine $docker-machine ip <docker_machine_name> )
 	#start http://$(shell docker-machine ip default):8080
-	test => http://$(shell docker-machine ip default):8080
+	
