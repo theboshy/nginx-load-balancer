@@ -10,6 +10,8 @@ Demostracion pequeña sobre la implementacion de un **load balancer** con **ngin
  - [gnuwin](https://stackoverflow.com/a/46842187/8513536)
 
 
+
+
  Para ejecutar el proyecto solo es necesario dirigirse a la carpeta de descarga y ejecutar el archivo **[Makefile](https://github.com/theboshy/nginx-load-balancer/blob/master/Makefile)**
 
  ```bash
@@ -17,20 +19,29 @@ Demostracion pequeña sobre la implementacion de un **load balancer** con **ngin
  make build
  ```
 
+
  > Si prefiere no descargar **gnuwin**, puede simplemente copiar los comandos desde
 #node servers en adelante en el archivo **[Makefile](https://github.com/theboshy/nginx-load-balancer/blob/master/Makefile)**
 
+
+
 Una vez terminado puede probar la instalacion dirigiendose a su servidor **nginx** dentro de docker en el puerto **:8080** **xxx.xxx.xxx.xxx:8080** y probando cualquiera de las 2 rutas **/go**, **/node** y actualizando varias veces se dara cuenta de que el mensaje que muestra cada pagina es diferente de acuerdo a lo establecido en el **Makefile** *docker run -e **"MESSAGE=servidor 1"** -p 8081:8080 -d node_serv*
+
+
 
 > Para conocer la **ip** del entorno docker puede ejecutar
  ```bash
  docker-machine ip <MACHINE_NAME>
  ```
+ 
+ 
 
  Por lo general al isntalar docker e inciarlo se crea una maquina virtual con el nombre default
  ```bash
  docker-machine ip default
  ```
+ 
+ 
  Para conocer el nombre de todas las maquinas virtuales funcioanando ejecute
  ```bash
  docker-machine ls
@@ -39,12 +50,18 @@ Una vez terminado puede probar la instalacion dirigiendose a su servidor **nginx
 
 
 
+
  ## Estructura del proyecto
+
+
 
  ### ./dirapp
  Contiene los servicios y archivos docker para en el enrutamiento con nginx
  * [goserv] - contenedor del servicio en **go**
    - para exponer un pequeño servidor en go se hace uso de las librerias de **[gin gonic](https://github.com/gin-gonic/gin)** y contiene un *handler* que retorna una respuesta formada pór una variable obtenida del *envirotment*.
+
+
+
 
 *[main.go](https://github.com/theboshy/nginx-load-balancer/blob/master/dirapp/goserv/main.go)*
 ```go
