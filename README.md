@@ -125,6 +125,7 @@ En esta carpeta se encuentra alamacenada la configuracion de nginx para hacerlo 
 El archivo **[Dockerfile](https://docs.docker.com/engine/reference/builder/)** se encargara de descargar **nginx** en la version que queramos pero una vez se descargue debemos indicarle a la imagen docker que utilize nuestra configuracion.
 
 *[Dockerfile](https://github.com/theboshy/nginx-load-balancer/blob/master/nginx/Dockerfile)*
+
 ```docker
 FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
