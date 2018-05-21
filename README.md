@@ -205,7 +205,7 @@ upstream app-node {
  }
 ```
 
-Una vez alcanzada 100 sesiones en el servidor **172.17.0.1:8081**, las sigueintes se enrutaran al sigueinte en la lista **172.17.0.1:8082** el cual solo tiene un maximo de *10*.
+Una vez alcanzada 100 sesiones en el servidor **172.17.0.1:8081**, las sigueintes se enrrutaran al siguiente en la lista **172.17.0.1:8082** el cual solo tiene un maximo de *10*.
 
 De esta forma usando el metodo **round-robin** distrubuimos la carga del servidor a diferentes servidores y evitamos asi congestion o lentitud entre las peticiones con ayuda de **nginx**.
 
