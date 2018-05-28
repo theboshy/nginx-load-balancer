@@ -125,6 +125,7 @@ En esta carpeta se encuentra alamacenada la configuracion de nginx para hacerlo 
 El archivo **[Dockerfile](https://docs.docker.com/engine/reference/builder/)** se encargara de descargar **nginx** en la version que queramos pero una vez se descargue debemos indicarle a la imagen docker que utilize nuestra configuracion.
 
 *[Dockerfile](https://github.com/theboshy/nginx-load-balancer/blob/master/nginx/Dockerfile)*
+
 ```docker
 FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
@@ -149,7 +150,7 @@ EXPOSE 80
 
  copiaremos nuestro archivo de configuracion **nginx.conf**.
 
- La configuracion del servidor **nginx** esta compuesta de la sigueinte manera
+ La configuracion del servidor **nginx** esta compuesta de la siguiente manera
 
  *[nginx.conf](https://github.com/theboshy/nginx-load-balancer/blob/master/nginx/nginx.conf)*
  
@@ -205,7 +206,7 @@ upstream app-node {
  }
 ```
 
-Una vez alcanzada 100 sesiones en el servidor **172.17.0.1:8081**, las sigueintes se enrutaran al sigueinte en la lista **172.17.0.1:8082** el cual solo tiene un maximo de *10*.
+Una vez alcanzada 100 sesiones en el servidor **172.17.0.1:8081**, las sigueintes se enrrutaran al siguiente en la lista **172.17.0.1:8082** el cual solo tiene un maximo de *10*.
 
 De esta forma usando el metodo **round-robin** distrubuimos la carga del servidor a diferentes servidores y evitamos asi congestion o lentitud entre las peticiones con ayuda de **nginx**.
 
