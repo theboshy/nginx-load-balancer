@@ -150,7 +150,7 @@ EXPOSE 80
 
  copiaremos nuestro archivo de configuracion **nginx.conf**.
 
- La configuracion del servidor **nginx** esta compuesta de la sigueinte manera
+ La configuracion del servidor **nginx** esta compuesta de la siguiente manera
 
  *[nginx.conf](https://github.com/theboshy/nginx-load-balancer/blob/master/nginx/nginx.conf)*
  
