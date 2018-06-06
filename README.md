@@ -213,3 +213,8 @@ De esta forma usando el metodo **round-robin** distrubuimos la carga del servido
   > lo mismo para la configuracion de **location/go**
 
   De esta forma las peticiones echas al servidor nginx para la ruta **/node**, de acuerdo al metodo **round-robin** se dirigiran a **172.17.0.1:8081** o **172.17.0.1:8081**
+  
+  
+  # UPDATE 6/6/18  📌 :shipit: 
+  
+  TODO : anadir configuracion de load balancer dinamicos usando traspilacion de codigo tipado (docker-gen)
