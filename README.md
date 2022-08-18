@@ -188,7 +188,7 @@ location /node {
   }
   #.....
   upstream app-node {
-    #metodo : round-robin
+    #metodo : Least connections
     server 172.17.0.1:8081 weight=1;
     server 172.17.0.1:8082 weight=1;
 }
